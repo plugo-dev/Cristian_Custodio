@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <title>Cristian Custódio • Custódio Imóveis</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#050816" />
+  <meta name="theme-color" content="#020816" />
 
   <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -13,30 +13,24 @@
 
   <style>
     :root{
-      /* FUNDO AZUL ESCURO EM DEGRADÊ */
-      --bg-1:#050816;
-      --bg-2:#02030a;
-
-      --card:#060910;
+      --bg-1:#020816;
+      --bg-2:#02040a;
+      --card:#07141b;
       --text:#ffffff;
-      --muted:#cfd5e4;
+      --muted:#cfe3ea;
+      --teal-1:#3ac0c9;
+      --teal-2:#0a7c8e;
 
       --radius-lg:28px;
       --radius-md:18px;
       --radius-pill:999px;
-      --shadow-soft:0 26px 70px rgba(0,0,0,.78);
+      --shadow-soft:0 26px 70px rgba(0,0,0,.75);
 
-      /* ouro */
+      /* paleta ouro */
       --gold-1:#f9eebe;
       --gold-2:#e9c97f;
       --gold-3:#cfa156;
       --gold-4:#8c652f;
-
-      /* CINZA ESCURO METÁLICO dos botões principais */
-      --metal-light:#cfd3df;
-      --metal-mid:#6b707e;
-      --metal-dark:#1c1f27;
-      --metal-deep:#090a0f;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -46,8 +40,8 @@
       font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top, rgba(70,120,200,.26), transparent 55%),
-        linear-gradient(180deg,var(--bg-1) 0%,var(--bg-2) 55%,#000 100%);
+        radial-gradient(circle at top, rgba(34,111,168,.55), transparent 55%),
+        linear-gradient(180deg,var(--bg-1) 0%,#01040b 55%,#000207 100%);
       display:flex;
       align-items:center;
       justify-content:center;
@@ -60,11 +54,9 @@
       position:relative;
       border-radius:var(--radius-lg);
       padding:26px 22px 20px;
-      background:
-        radial-gradient(circle at top left,rgba(80,120,200,.28),transparent 60%),
-        linear-gradient(145deg,rgba(8,12,24,.96),rgba(3,5,12,.98));
+      background:linear-gradient(145deg,rgba(10,25,40,.96),rgba(3,7,14,.98));
       box-shadow:var(--shadow-soft);
-      border:1px solid rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.08);
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
       overflow:hidden;
@@ -77,7 +69,7 @@
       border-radius:inherit;
       padding:1px;
       background:
-        linear-gradient(135deg,rgba(255,255,255,.15),transparent 35%,rgba(233,201,127,.45),rgba(60,110,200,.65));
+        linear-gradient(135deg,rgba(255,255,255,.16),transparent 40%,rgba(249,238,190,.45),rgba(16,137,172,.6));
       mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
       -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
       mask-composite:exclude;
@@ -97,7 +89,7 @@
       margin:0 auto 14px;
       padding:4px;
       background:
-        radial-gradient(circle at top,#f5e0b5,#1d2744);
+        radial-gradient(circle at top,#f5f1df 0,#265f7a 40%,#050910 100%);
       border:2px solid rgba(255,255,255,.85);
       display:flex;align-items:center;justify-content:center;
       overflow:hidden;
@@ -129,10 +121,10 @@
       font-size:.78rem;
       letter-spacing:.22em;
       text-transform:uppercase;
-      color:rgba(233,201,127,.95);
+      color:rgba(249,238,190,.95);
     }
 
-    /* PILL BTNS – CINZA ESCURO METÁLICO + BORDA DOURADA MÉDIA */
+    /* BOTÕES PRINCIPAIS (cinza metálico + borda dourada média) */
     .pill-row{
       display:flex;
       gap:10px;
@@ -146,69 +138,61 @@
       align-items:center;
       justify-content:center;
       gap:7px;
-      padding:10px 16px;
+      padding:11px 16px;
       border-radius:var(--radius-pill);
       border:none;
       cursor:pointer;
       text-decoration:none;
-      font-size:.86rem;
+      font-size:.88rem;
       font-weight:600;
       white-space:nowrap;
-      color:#f7f3e4;
+      color:#f9f3d0;
+
+      /* interior cinza escuro metálico */
       background:
-        linear-gradient(180deg,rgba(255,255,255,.15),rgba(255,255,255,0) 36%) top/100% 46% no-repeat,
-        linear-gradient(180deg,var(--metal-light) 0%,var(--metal-mid) 30%,var(--metal-dark) 70%,var(--metal-deep) 100%);
-      box-shadow:0 18px 34px rgba(0,0,0,.9);
+        linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,0) 40%) top/100% 52% no-repeat,
+        linear-gradient(145deg,#454852 0%,#1b1d24 50%,#05060a 100%);
+      box-shadow:0 20px 40px rgba(0,0,0,.95);
       overflow:hidden;
     }
 
-    /* borda MÉDIA dourada */
     .pill-btn::before{
       content:"";
       position:absolute;
       inset:0;
       border-radius:var(--radius-pill);
-      padding:3px; /* mais grossa que a dos outros */
+      padding:2px; /* borda média */
       background:linear-gradient(180deg,var(--gold-1) 0,var(--gold-2) 40%,var(--gold-3) 75%,var(--gold-4) 100%);
-      opacity:.95;
       -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
       -webkit-mask-composite:xor;
       mask-composite:exclude;
       pointer-events:none;
+      opacity:.95;
     }
 
     .pill-btn::after{
       content:"";
       position:absolute;
-      left:14px;right:14px;
+      left:12px;right:12px;
       top:26%;
       height:18%;
       border-radius:999px;
       background:linear-gradient(180deg,rgba(255,255,255,.32),rgba(255,255,255,0));
-      opacity:.85;
+      opacity:.9;
       pointer-events:none;
     }
 
     .pill-btn.secondary{
-      color:#fbe9c2;
+      color:#ffe9bf;
       background:
-        linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,0) 34%) top/100% 46% no-repeat,
-        linear-gradient(180deg,#a6abb8 0%,#555967 40%,#181a22 85%,#05060a 100%);
+        linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,0) 36%) top/100% 52% no-repeat,
+        linear-gradient(145deg,#393c45 0%,#15171f 55%,#040509 100%);
     }
 
-    .pill-btn i{font-size:1.05rem;}
+    .pill-btn i{font-size:1.05rem;position:relative;z-index:1;}
     .pill-btn span{position:relative;z-index:1;}
-    .pill-btn i{position:relative;z-index:1;}
-
-    .pill-btn:hover{
-      transform:translateY(-1px);
-      box-shadow:0 22px 40px rgba(0,0,0,.96);
-    }
-    .pill-btn:active{
-      transform:translateY(1px);
-      box-shadow:none;
-      opacity:.95;
-    }
+    .pill-btn:hover{transform:translateY(-1px);box-shadow:0 24px 48px rgba(0,0,0,1);}
+    .pill-btn:active{transform:translateY(1px);box-shadow:none;opacity:.95;}
 
     /* TITLES */
     .section-title{
@@ -219,7 +203,7 @@
       margin-bottom:10px;
     }
 
-    /* LISTA DE BOTÕES – BORDA DOURADA FINA */
+    /* LISTA DE BOTÕES – fundo azul escuro + borda dourada fina */
     .btn-list{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;}
 
     .btn-line{
@@ -230,7 +214,7 @@
       width:100%;
       padding:12px 14px;
       border-radius:999px;
-      background:linear-gradient(135deg,rgba(0,0,0,.88),rgba(8,14,26,.98));
+      background:linear-gradient(135deg,#050a12,#02050b);
       text-decoration:none;
       color:var(--text);
       font-size:.9rem;
@@ -238,19 +222,18 @@
       overflow:hidden;
     }
 
-    /* anel dourado FINO nos demais botões */
     .btn-line::before{
       content:"";
       position:absolute;
       inset:0;
       border-radius:999px;
-      padding:1px; /* fino */
+      padding:1px; /* borda fina */
       background:linear-gradient(120deg,
         rgba(249,238,190,.95),
         rgba(233,201,127,.7),
-        rgba(207,161,86,.35),
+        rgba(207,161,86,.3),
         transparent 80%);
-      opacity:.88;
+      opacity:.9;
       -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
       -webkit-mask-composite:xor;
       mask-composite:exclude;
@@ -259,19 +242,10 @@
 
     .btn-line:hover{
       transform:translateY(-1px);
-      box-shadow:0 18px 32px rgba(0,0,0,.9);
-      background:linear-gradient(135deg,rgba(6,12,24,.98),rgba(10,20,36,.98));
+      box-shadow:0 18px 34px rgba(0,0,0,.9);
+      background:linear-gradient(135deg,#050b16,#050c19);
     }
     .btn-line:active{transform:translateY(1px);box-shadow:none;opacity:.9;}
-
-    .btn-line.disabled,
-    .btn-line.disabled:hover,
-    .btn-line.disabled:active{
-      cursor:default;
-      opacity:.45;
-      box-shadow:none;
-      transform:none;
-    }
 
     .btn-icon{
       width:38px;height:38px;
@@ -280,19 +254,41 @@
       align-items:center;
       justify-content:center;
       flex-shrink:0;
-      background:
-        radial-gradient(circle at 30% 10%,rgba(255,255,255,.22),transparent 40%),
-        linear-gradient(180deg,#1b2744,#050711);
+      background:radial-gradient(circle at 30% 10%,rgba(255,255,255,.22),transparent 35%),
+                 radial-gradient(circle at bottom,#0c4f68,#02040a);
       border:1px solid rgba(255,255,255,.18);
-      color:#f3dba0;
-      box-shadow:0 8px 18px rgba(0,0,0,.7);
+      color:var(--gold-2);
+      box-shadow:0 8px 18px rgba(0,0,0,.8);
       position:relative;
-      z-index:1;
     }
     .btn-icon i{font-size:1.26rem;}
     .btn-icon img{width:70%;height:70%;object-fit:contain;display:block;}
 
-    .btn-label{display:flex;flex-direction:column;gap:1px;overflow:hidden;position:relative;z-index:1;}
+    /* Ícone exclusivo do Pix (duas linhas + quadrado) */
+    .btn-icon-pix{
+      background:radial-gradient(circle at 30% 10%,rgba(255,255,255,.22),transparent 35%),
+                 radial-gradient(circle at bottom,#102733,#02040a);
+    }
+    .btn-icon-pix::before,
+    .btn-icon-pix::after{
+      content:"";
+      position:absolute;
+      left:24%;
+      right:24%;
+      height:2px;
+      border-radius:999px;
+      background:var(--gold-2);
+    }
+    .btn-icon-pix::before{top:28%;}
+    .btn-icon-pix::after{bottom:28%;}
+    .btn-icon-pix .pix-square{
+      position:absolute;
+      inset:30% 30%;
+      border-radius:6px;
+      border:2px solid var(--gold-2);
+    }
+
+    .btn-label{display:flex;flex-direction:column;gap:1px;overflow:hidden;}
     .btn-main{font-size:.93rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
     .btn-sub{font-size:.75rem;color:var(--muted);}
 
@@ -313,7 +309,7 @@
     }
 
     .footer{
-      border-top:1px solid rgba(255,255,255,.06);
+      border-top:1px solid rgba(255,255,255,.04);
       padding-top:9px;
       margin-top:6px;
       font-size:.72rem;
@@ -326,7 +322,7 @@
       font-size:.7rem;
       text-transform:uppercase;
       letter-spacing:.18em;
-      color:rgba(233,201,127,.95);
+      color:rgba(249,238,190,.96);
     }
 
     @media (max-width:420px){
@@ -350,11 +346,11 @@
 
         <!-- BOTÕES PRINCIPAIS -->
         <div class="pill-row">
-          <a class="pill-btn" href="cristian-custodio.vcf" download>
+          <a class="pill-btn" href="cristian.vcf" download>
             <i class="ri-id-card-line"></i>
             <span>Salvar contato</span>
           </a>
-          <a class="pill-btn secondary" href="tel:48999289447">
+          <a class="pill-btn secondary" href="tel:5548999289447">
             <i class="ri-phone-line"></i>
             <span>Ligar</span>
           </a>
@@ -379,11 +375,13 @@
             </span>
           </a>
 
-          <a class="btn-line" href="#" onclick="navigator.clipboard.writeText('48999289447').then(()=>alert('Chave Pix copiada: 48999289447'));return false;">
-            <span class="btn-icon"><i class="ri-qr-scan-line"></i></span>
+          <a class="btn-line" href="#" onclick="copyPix();return false;">
+            <span class="btn-icon btn-icon-pix">
+              <span class="pix-square"></span>
+            </span>
             <span class="btn-label">
               <span class="btn-main">Pix</span>
-              <span class="btn-sub">Chave celular • 48 99928-9447</span>
+              <span class="btn-sub">@cristian</span>
             </span>
           </a>
         </div>
@@ -439,6 +437,19 @@
         </footer>
       </div>
     </section>
+
+    <script>
+      function copyPix() {
+        const chave = "48999289447";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(chave)
+            .then(() => alert("Chave Pix copiada: " + chave))
+            .catch(() => alert("Chave Pix: " + chave));
+        } else {
+          alert("Chave Pix: " + chave);
+        }
+      }
+    </script>
   </main>
 </body>
 </html>
