@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <title>Cristian Custódio • Custódio Imóveis</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#020816" />
+  <meta name="theme-color" content="#020814" />
 
   <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -13,35 +13,35 @@
 
   <style>
     :root{
-      --bg-1:#020816;
-      --bg-2:#02040a;
-      --card:#07141b;
-      --text:#ffffff;
-      --muted:#cfe3ea;
-      --teal-1:#3ac0c9;
-      --teal-2:#0a7c8e;
+      /* fundo azul escuro em degradê */
+      --bg-1:#020814;
+      --bg-2:#04182a;
 
-      --radius-lg:28px;
+      --card:#050a11;
+      --text:#ffffff;
+      --muted:#cfd9e6;
+
+      /* ouro */
+      --gold-1:#ffe8b4;
+      --gold-2:#f1c27b;
+      --gold-3:#c79246;
+      --gold-4:#845323;
+
+      --radius-lg:26px;
       --radius-md:18px;
       --radius-pill:999px;
       --shadow-soft:0 26px 70px rgba(0,0,0,.75);
-
-      /* paleta ouro */
-      --gold-1:#f9eebe;
-      --gold-2:#e9c97f;
-      --gold-3:#cfa156;
-      --gold-4:#8c652f;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
+    *{box-sizing:border-box;margin:0;padding:0;}
 
     body{
       min-height:100vh;
       font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top, rgba(34,111,168,.55), transparent 55%),
-        linear-gradient(180deg,var(--bg-1) 0%,#01040b 55%,#000207 100%);
+        radial-gradient(circle at top,rgba(46,92,160,.45),transparent 55%),
+        linear-gradient(180deg,var(--bg-2) 0,var(--bg-1) 40%,#000000 100%);
       display:flex;
       align-items:center;
       justify-content:center;
@@ -54,7 +54,7 @@
       position:relative;
       border-radius:var(--radius-lg);
       padding:26px 22px 20px;
-      background:linear-gradient(145deg,rgba(10,25,40,.96),rgba(3,7,14,.98));
+      background:linear-gradient(145deg,rgba(10,18,30,.96),rgba(0,0,0,.98));
       box-shadow:var(--shadow-soft);
       border:1px solid rgba(255,255,255,.08);
       backdrop-filter:blur(18px);
@@ -68,14 +68,16 @@
       inset:-1px;
       border-radius:inherit;
       padding:1px;
-      background:
-        linear-gradient(135deg,rgba(255,255,255,.16),transparent 40%,rgba(249,238,190,.45),rgba(16,137,172,.6));
+      background:linear-gradient(135deg,
+        rgba(255,255,255,.18),
+        rgba(47,109,188,.6),
+        rgba(8,24,53,.95));
       mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
       -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
       mask-composite:exclude;
       -webkit-mask-composite:xor;
       pointer-events:none;
-      opacity:.9;
+      opacity:.8;
     }
 
     .card-inner{position:relative;z-index:1;}
@@ -89,11 +91,11 @@
       margin:0 auto 14px;
       padding:4px;
       background:
-        radial-gradient(circle at top,#f5f1df 0,#265f7a 40%,#050910 100%);
-      border:2px solid rgba(255,255,255,.85);
+        radial-gradient(circle at top,#ffffff,#4f90c9 38%,#020814 80%);
+      border:2px solid rgba(255,255,255,.9);
       display:flex;align-items:center;justify-content:center;
       overflow:hidden;
-      box-shadow:0 18px 40px rgba(0,0,0,.9);
+      box-shadow:0 20px 40px rgba(0,0,0,.9);
     }
     .avatar-inner{
       width:100%;height:100%;
@@ -121,10 +123,10 @@
       font-size:.78rem;
       letter-spacing:.22em;
       text-transform:uppercase;
-      color:rgba(249,238,190,.95);
+      color:rgba(210,225,238,.95);
     }
 
-    /* BOTÕES PRINCIPAIS (cinza metálico + borda dourada média) */
+    /* BOTÕES PRINCIPAIS (salvar / ligar) */
     .pill-row{
       display:flex;
       gap:10px;
@@ -143,25 +145,25 @@
       border:none;
       cursor:pointer;
       text-decoration:none;
-      font-size:.88rem;
+      font-size:.9rem;
       font-weight:600;
       white-space:nowrap;
-      color:#f9f3d0;
-
-      /* interior cinza escuro metálico */
+      /* cinza escuro metálico */
       background:
-        linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,0) 40%) top/100% 52% no-repeat,
-        linear-gradient(145deg,#454852 0%,#1b1d24 50%,#05060a 100%);
-      box-shadow:0 20px 40px rgba(0,0,0,.95);
+        linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.02) 40%) top/100% 55% no-repeat,
+        linear-gradient(180deg,#353743 0,#15161c 55%,#050609 100%);
+      color:#fdf5dd;
+      box-shadow:0 18px 38px rgba(0,0,0,.95);
       overflow:hidden;
     }
 
+    /* borda média dourada */
     .pill-btn::before{
       content:"";
       position:absolute;
       inset:0;
       border-radius:var(--radius-pill);
-      padding:2px; /* borda média */
+      padding:2px; /* mais grossa que os demais */
       background:linear-gradient(180deg,var(--gold-1) 0,var(--gold-2) 40%,var(--gold-3) 75%,var(--gold-4) 100%);
       -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
       -webkit-mask-composite:xor;
@@ -173,26 +175,27 @@
     .pill-btn::after{
       content:"";
       position:absolute;
-      left:12px;right:12px;
-      top:26%;
-      height:18%;
+      left:14px;right:14px;
+      top:24%;
+      height:20%;
       border-radius:999px;
-      background:linear-gradient(180deg,rgba(255,255,255,.32),rgba(255,255,255,0));
-      opacity:.9;
+      background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0));
       pointer-events:none;
-    }
-
-    .pill-btn.secondary{
-      color:#ffe9bf;
-      background:
-        linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,0) 36%) top/100% 52% no-repeat,
-        linear-gradient(145deg,#393c45 0%,#15171f 55%,#040509 100%);
+      opacity:.9;
     }
 
     .pill-btn i{font-size:1.05rem;position:relative;z-index:1;}
     .pill-btn span{position:relative;z-index:1;}
-    .pill-btn:hover{transform:translateY(-1px);box-shadow:0 24px 48px rgba(0,0,0,1);}
-    .pill-btn:active{transform:translateY(1px);box-shadow:none;opacity:.95;}
+
+    .pill-btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 22px 44px rgba(0,0,0,1);
+    }
+    .pill-btn:active{
+      transform:translateY(1px);
+      box-shadow:none;
+      opacity:.96;
+    }
 
     /* TITLES */
     .section-title{
@@ -203,7 +206,7 @@
       margin-bottom:10px;
     }
 
-    /* LISTA DE BOTÕES – fundo azul escuro + borda dourada fina */
+    /* BOTÕES DE LISTA */
     .btn-list{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;}
 
     .btn-line{
@@ -212,83 +215,64 @@
       align-items:center;
       gap:10px;
       width:100%;
-      padding:12px 14px;
+      padding:12px 16px;
       border-radius:999px;
-      background:linear-gradient(135deg,#050a12,#02050b);
+      background:linear-gradient(135deg,#02060b,#050c13);
       text-decoration:none;
       color:var(--text);
       font-size:.9rem;
       font-weight:500;
       overflow:hidden;
+      box-shadow:0 14px 30px rgba(0,0,0,.85);
     }
 
+    /* anel dourado fino, visível em todo o contorno (sem sumir na direita) */
     .btn-line::before{
       content:"";
       position:absolute;
       inset:0;
       border-radius:999px;
-      padding:1px; /* borda fina */
+      padding:1px;
       background:linear-gradient(120deg,
-        rgba(249,238,190,.95),
-        rgba(233,201,127,.7),
-        rgba(207,161,86,.3),
-        transparent 80%);
-      opacity:.9;
+        rgba(255,232,180,.95) 0%,
+        rgba(241,194,123,.9) 30%,
+        rgba(199,146,70,.8) 65%,
+        rgba(132,83,35,.75) 100%);
       -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
       -webkit-mask-composite:xor;
       mask-composite:exclude;
       pointer-events:none;
+      opacity:.92;
     }
 
     .btn-line:hover{
       transform:translateY(-1px);
-      box-shadow:0 18px 34px rgba(0,0,0,.9);
-      background:linear-gradient(135deg,#050b16,#050c19);
+      box-shadow:0 18px 38px rgba(0,0,0,.96);
+      background:linear-gradient(135deg,#050d16,#07141f);
     }
     .btn-line:active{transform:translateY(1px);box-shadow:none;opacity:.9;}
 
     .btn-icon{
-      width:38px;height:38px;
+      width:40px;height:40px;
       border-radius:50%;
       display:inline-flex;
       align-items:center;
       justify-content:center;
       flex-shrink:0;
-      background:radial-gradient(circle at 30% 10%,rgba(255,255,255,.22),transparent 35%),
-                 radial-gradient(circle at bottom,#0c4f68,#02040a);
+      background:
+        radial-gradient(circle at 30% 10%,rgba(255,255,255,.22),transparent 35%),
+        radial-gradient(circle at bottom,#1c2a3b,#02060b);
       border:1px solid rgba(255,255,255,.18);
       color:var(--gold-2);
-      box-shadow:0 8px 18px rgba(0,0,0,.8);
+      box-shadow:0 10px 20px rgba(0,0,0,.85);
       position:relative;
+      z-index:1;
     }
+
     .btn-icon i{font-size:1.26rem;}
     .btn-icon img{width:70%;height:70%;object-fit:contain;display:block;}
 
-    /* Ícone exclusivo do Pix (duas linhas + quadrado) */
-    .btn-icon-pix{
-      background:radial-gradient(circle at 30% 10%,rgba(255,255,255,.22),transparent 35%),
-                 radial-gradient(circle at bottom,#102733,#02040a);
-    }
-    .btn-icon-pix::before,
-    .btn-icon-pix::after{
-      content:"";
-      position:absolute;
-      left:24%;
-      right:24%;
-      height:2px;
-      border-radius:999px;
-      background:var(--gold-2);
-    }
-    .btn-icon-pix::before{top:28%;}
-    .btn-icon-pix::after{bottom:28%;}
-    .btn-icon-pix .pix-square{
-      position:absolute;
-      inset:30% 30%;
-      border-radius:6px;
-      border:2px solid var(--gold-2);
-    }
-
-    .btn-label{display:flex;flex-direction:column;gap:1px;overflow:hidden;}
+    .btn-label{display:flex;flex-direction:column;gap:1px;overflow:hidden;position:relative;z-index:1;}
     .btn-main{font-size:.93rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
     .btn-sub{font-size:.75rem;color:var(--muted);}
 
@@ -309,7 +293,7 @@
     }
 
     .footer{
-      border-top:1px solid rgba(255,255,255,.04);
+      border-top:1px solid rgba(255,255,255,.06);
       padding-top:9px;
       margin-top:6px;
       font-size:.72rem;
@@ -322,7 +306,7 @@
       font-size:.7rem;
       text-transform:uppercase;
       letter-spacing:.18em;
-      color:rgba(249,238,190,.96);
+      color:rgba(240,201,138,.95);
     }
 
     @media (max-width:420px){
@@ -346,11 +330,12 @@
 
         <!-- BOTÕES PRINCIPAIS -->
         <div class="pill-row">
+          <!-- usa cristian.vcf (nome do arquivo no repo) -->
           <a class="pill-btn" href="cristian.vcf" download>
             <i class="ri-id-card-line"></i>
             <span>Salvar contato</span>
           </a>
-          <a class="pill-btn secondary" href="tel:5548999289447">
+          <a class="pill-btn" href="tel:5548999289447">
             <i class="ri-phone-line"></i>
             <span>Ligar</span>
           </a>
@@ -375,13 +360,12 @@
             </span>
           </a>
 
-          <a class="btn-line" href="#" onclick="copyPix();return false;">
-            <span class="btn-icon btn-icon-pix">
-              <span class="pix-square"></span>
-            </span>
+          <!-- PIX com ícone $ -->
+          <a class="btn-line" href="#" onclick="navigator.clipboard.writeText('48999289447').then(()=>alert('Chave Pix copiada: 48999289447'));return false;">
+            <span class="btn-icon"><i class="ri-money-dollar-circle-line"></i></span>
             <span class="btn-label">
               <span class="btn-main">Pix</span>
-              <span class="btn-sub">@cristian</span>
+              <span class="btn-sub">Chave celular • 48 99928-9447</span>
             </span>
           </a>
         </div>
@@ -437,19 +421,6 @@
         </footer>
       </div>
     </section>
-
-    <script>
-      function copyPix() {
-        const chave = "48999289447";
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(chave)
-            .then(() => alert("Chave Pix copiada: " + chave))
-            .catch(() => alert("Chave Pix: " + chave));
-        } else {
-          alert("Chave Pix: " + chave);
-        }
-      }
-    </script>
   </main>
 </body>
 </html>
