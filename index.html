@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <title>Cristian Custódio • Custódio Imóveis</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#03566c" />
+  <meta name="theme-color" content="#05070b" />
   <meta name="description" content="Card digital de Cristian Custódio, fundador e CEO da Custódio Imóveis. Contatos diretos e links oficiais da imobiliária." />
 
   <!-- Fonte -->
@@ -15,22 +15,25 @@
 
   <style>
     :root {
-      /* Paleta inspirada no site: mar + céu + laranja do botão */
-      --bg-1:#02141c;
-      --bg-2:#034155;
-      --sea-light:#0b7285;
-      --sea-deep:#022733;
-      --sand:#f2ae55;
-      --sand-dark:#d58a34;
+      /* Paleta premium escura, neutra (sem “praia”) */
+      --bg-1:#05070b;
+      --bg-2:#10131f;
+
+      --card-top:#171a2a;
+      --card-bottom:#05060a;
+
+      --pill-light-1:#f5f6fa;
+      --pill-light-2:#d5d9e4;
+      --pill-light-3:#afb5c4;
 
       --text:#ffffff;
-      --muted:#c7d4df;
+      --muted:#c7ccd8;
 
       --radius-lg:26px;
       --radius-md:18px;
       --radius-pill:999px;
 
-      --shadow-soft:0 26px 60px rgba(0,0,0,.75);
+      --shadow-soft:0 26px 60px rgba(0,0,0,.85);
       --blur:20px;
     }
 
@@ -41,8 +44,8 @@
       font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top, rgba(255,255,255,.09), transparent 50%),
-        linear-gradient(180deg,#0a6076 0%,#02141c 60%,#01080c 100%);
+        radial-gradient(circle at top, rgba(255,255,255,.04), transparent 55%),
+        linear-gradient(180deg,var(--bg-2) 0%,var(--bg-1) 55%,#010208 100%);
       display:flex;
       align-items:center;
       justify-content:center;
@@ -56,8 +59,8 @@
       border-radius:var(--radius-lg);
       padding:26px 22px 18px;
       background:
-        radial-gradient(circle at top left,rgba(35,170,189,.4),transparent 60%),
-        radial-gradient(circle at bottom right,rgba(2,61,81,.9),#021015);
+        radial-gradient(circle at top left,rgba(255,255,255,.05),transparent 60%),
+        linear-gradient(180deg,var(--card-top),var(--card-bottom));
       box-shadow:var(--shadow-soft);
       border:1px solid rgba(255,255,255,.10);
       backdrop-filter:blur(var(--blur));
@@ -71,9 +74,9 @@
       inset:-1px;
       border-radius:inherit;
       background:
-        linear-gradient(120deg,rgba(255,255,255,.13),transparent 45%,rgba(3,151,173,.35),transparent 80%);
+        linear-gradient(120deg,rgba(255,255,255,.12),transparent 40%,rgba(110,125,170,.6),transparent 80%);
       mix-blend-mode:screen;
-      opacity:.65;
+      opacity:.55;
       pointer-events:none;
     }
 
@@ -90,14 +93,14 @@
       margin:0 auto 14px;
       padding:4px;
       background:
-        radial-gradient(circle at 20% 0%,#ffffff 0,#eaf7ff 26%,transparent 55%),
-        linear-gradient(180deg,#0e9db4,#034257);
+        radial-gradient(circle at 20% 0%,#ffffff 0,#e8edf7 26%,transparent 55%),
+        linear-gradient(180deg,#3a4b7a,#101321);
       border:1px solid rgba(255,255,255,.7);
       display:flex;
       align-items:center;
       justify-content:center;
       overflow:hidden;
-      box-shadow:0 18px 40px rgba(0,0,0,.85);
+      box-shadow:0 18px 40px rgba(0,0,0,.9);
     }
 
     .avatar-inner{
@@ -129,10 +132,10 @@
       font-size:.74rem;
       letter-spacing:.2em;
       text-transform:uppercase;
-      color:rgba(234,242,248,.96);
+      color:rgba(228,232,244,.96);
     }
 
-    /* BOTÕES PRINCIPAIS – NOVA COR */
+    /* BOTÕES PRINCIPAIS */
 
     .pill-row{
       display:flex;
@@ -153,32 +156,22 @@
       font-size:.9rem;
       font-weight:600;
       cursor:pointer;
-
-      /* texto claro */
-      color:#f5fbff;
-
-      /* degradê azul/verde combinando com o site */
+      color:#111827;
       background:
-        radial-gradient(circle at 18% 0%,rgba(255,255,255,.55) 0,transparent 55%),
-        linear-gradient(180deg,#3df0ff 0%,#19adc4 35%,#04728a 70%,#03556b 100%);
-
+        radial-gradient(circle at 18% 0%,#ffffff 0,#f9fafc 26%,transparent 55%),
+        linear-gradient(180deg,var(--pill-light-1) 0%,var(--pill-light-2) 45%,var(--pill-light-3) 100%);
       box-shadow:
         0 18px 40px rgba(0,0,0,.9),
-        0 0 0 1px rgba(0,0,0,.65);
+        0 0 0 1px rgba(0,0,0,.7);
     }
 
+    /* leve brilho de contorno, bem fino */
     .pill-btn::before{
       content:"";
       position:absolute;
       inset:0;
       border-radius:inherit;
-      border:1px solid rgba(214,243,255,.95);
-      background:linear-gradient(
-        120deg,
-        rgba(214,243,255,1) 0%,
-        rgba(214,243,255,0) 40%,
-        rgba(120,229,250,.9) 80%
-      );
+      border:1px solid rgba(255,255,255,.75);
       mix-blend-mode:screen;
       opacity:.9;
       pointer-events:none;
@@ -204,7 +197,7 @@
       font-size:.8rem;
       text-transform:uppercase;
       letter-spacing:.18em;
-      color:rgba(205,220,231,.9);
+      color:rgba(205,210,228,.9);
       margin:4px 0 10px;
     }
 
@@ -228,10 +221,10 @@
       font-size:.9rem;
       font-weight:500;
       background:
-        radial-gradient(circle at top left,rgba(23,148,170,.35),transparent 60%),
-        #041018;
-      border:1px solid rgba(255,255,255,.09);
-      box-shadow:0 16px 32px rgba(0,0,0,.85);
+        radial-gradient(circle at top left,rgba(255,255,255,.08),transparent 60%),
+        linear-gradient(180deg,#171a26,#05060b);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 16px 32px rgba(0,0,0,.9);
       overflow:hidden;
       transition:transform .15s ease,box-shadow .15s ease,background .15s ease,border-color .15s ease;
     }
@@ -241,19 +234,19 @@
       position:absolute;
       inset:0;
       border-radius:inherit;
-      border:1px solid rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.10);
       mix-blend-mode:screen;
-      opacity:.6;
+      opacity:.5;
       pointer-events:none;
     }
 
     .btn-line:hover{
       transform:translateY(-1px);
-      border-color:rgba(161,221,244,.8);
-      box-shadow:0 20px 40px rgba(0,0,0,1);
+      border-color:rgba(180,195,230,.9);
+      box-shadow:0 22px 44px rgba(0,0,0,1);
       background:
-        radial-gradient(circle at top left,rgba(42,172,195,.55),transparent 65%),
-        #030d14;
+        radial-gradient(circle at top left,rgba(255,255,255,.12),transparent 65%),
+        linear-gradient(180deg,#1e2231,#05060b);
     }
     .btn-line:active{
       transform:translateY(1px);
@@ -271,28 +264,28 @@
       justify-content:center;
       background:
         radial-gradient(circle at 30% 0%,rgba(255,255,255,.25),transparent 55%),
-        linear-gradient(180deg,#0ca4bb,#035569);
-      border:1px solid rgba(255,255,255,.5);
-      box-shadow:0 10px 20px rgba(0,0,0,.85);
+        linear-gradient(180deg,#2e3b63,#101321);
+      border:1px solid rgba(255,255,255,.55);
+      box-shadow:0 10px 20px rgba(0,0,0,.9);
     }
 
     .btn-icon i{font-size:1.2rem;}
 
     .btn-line.whatsapp .btn-icon{
       background:
-        radial-gradient(circle at 30% 0%,rgba(255,255,255,.25),transparent 55%),
+        radial-gradient(circle at 30% 0%,rgba(255,255,255,.28),transparent 55%),
         linear-gradient(180deg,#28d163,#0c863a);
     }
 
     .btn-line.instagram .btn-icon{
       background:
-        radial-gradient(circle at 30% 0%,rgba(255,255,255,.2),transparent 55%),
+        radial-gradient(circle at 30% 0%,rgba(255,255,255,.22),transparent 55%),
         radial-gradient(circle at 30% 110%,#f58529 0,#dd2a7b 40%,#8134af 70%,#515bd4 100%);
     }
 
     .btn-line.pix .btn-icon{
       background:
-        radial-gradient(circle at 30% 0%,rgba(255,255,255,.25),transparent 55%),
+        radial-gradient(circle at 30% 0%,rgba(255,255,255,.26),transparent 55%),
         linear-gradient(180deg,#2fd4c2,#0a7f6a);
     }
 
@@ -309,7 +302,7 @@
       font-size:.8rem;
       text-transform:uppercase;
       letter-spacing:.18em;
-      color:rgba(205,220,231,.95);
+      color:rgba(210,216,236,.95);
       margin-bottom:6px;
     }
     .about{
@@ -321,40 +314,34 @@
     }
 
     /* RODAPÉ PREMIUM */
-
     .footer{
-      position:relative;
-      padding-top:14px;
-      margin-top:14px;
+      border-top:1px solid rgba(255,255,255,.06);
+      padding-top:10px;
+      margin-top:10px;
       font-size:.72rem;
       text-align:center;
-      color:rgba(214,236,247,.92);
+      color:rgba(190,200,216,.95);
+      position:relative;
     }
 
     .footer::before{
       content:"";
       position:absolute;
       top:0;
-      left:10%;
-      right:10%;
-      height:1px;
-      background:linear-gradient(90deg,
-                  transparent,
-                  rgba(120,229,250,.2),
-                  rgba(214,243,255,.95),
-                  rgba(120,229,250,.2),
-                  transparent);
-      opacity:.95;
-      pointer-events:none;
+      left:50%;
+      width:120px;
+      transform:translateX(-50%);
+      border-top:1px solid rgba(255,255,255,.22);
+      opacity:.8;
     }
 
     .footer span{
       display:block;
-      margin-top:4px;
+      margin-top:3px;
       text-transform:uppercase;
-      letter-spacing:.16em;
+      letter-spacing:.18em;
       font-size:.7rem;
-      color:rgba(144,220,255,.96);
+      color:rgba(225,230,244,.96);
     }
 
     @media (max-width:420px){
@@ -373,7 +360,7 @@
           </div>
           <div class="hero-name">Cristian Custódio</div>
           <div class="hero-role">Fundador e CEO — Custódio Imóveis</div>
-          <div class="hero-tagline">LITORAL • INVESTIMENTOS • QUALIDADE</div>
+          <div class="hero-tagline">LITORAL • INVESTIMENTO • QUALIDADE</div>
         </header>
 
         <!-- BOTÕES PRINCIPAIS -->
@@ -410,7 +397,8 @@
           </a>
 
           <!-- Pix -->
-          <a class="btn-line pix" href="#" onclick="navigator.clipboard.writeText('48999289447').then(()=>alert('Chave Pix copiada: 48999289447'));return false;">
+          <a class="btn-line pix" href="#"
+             onclick="navigator.clipboard.writeText('48999289447').then(()=>alert('Chave Pix copiada: 48999289447'));return false;">
             <span class="btn-icon"><i class="ri-money-dollar-circle-line"></i></span>
             <span class="btn-label">
               <span class="btn-main">Pix</span>
@@ -441,11 +429,12 @@
           </a>
 
           <!-- Avaliação Google -->
-          <a class="btn-line" href="https://www.google.com/maps/place/Cust%C3%B3dio+Im%C3%B3veis/@-29.1099176,-49.639909,17z/data=!4m8!3m7!1s0x95223c39d3842253:0x64141190209f8421!8m2!3d-29.1099176!4d-49.639909!9m1!1b1!16s%2Fg%2F11j9dkx49s" target="_blank" rel="noopener noreferrer">
+          <a class="btn-line" href="https://www.google.com/maps/place/Cust%C3%B3dio+Im%C3%B3veis/@-29.1099176,-49.639909,17z/data=!4m8!3m7!1s0x95223c39d3842253:0x64141190209f8421!8m2!3d-29.1099176!4d-49.639909!9m1!1b1!16s%2Fg%2F11j9dkx49s"
+             target="_blank" rel="noopener noreferrer">
             <span class="btn-icon"><i class="ri-star-smile-line"></i></span>
             <span class="btn-label">
-              <span class="btn-main">Avaliação no Google</span>
-              <span class="btn-sub">Compartilhe sua experiência com a imobiliária</span>
+              <span class="btn-main">Avalie no Google</span>
+              <span class="btn-sub">Conte como foi sua experiência com a imobiliária</span>
             </span>
           </a>
 
@@ -470,7 +459,7 @@
 
         <footer class="footer">
           © Plugo.ia
-          <span>AUTOMACOES COM IA • LITORAL SC</span>
+          <span>AUTOMAÇÕES COM IA • LITORAL SC</span>
         </footer>
       </div>
     </section>
