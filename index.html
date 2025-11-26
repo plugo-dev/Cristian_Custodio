@@ -144,10 +144,10 @@
       font-size:.86rem;
       font-weight:600;
       cursor:pointer;
-      color:var(--text);
+      color:#f4fbff;
+      /* NOVO: gradiente em tons de azul/verde do site */
       background:
-        linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0) 50%) top/100% 56% no-repeat,
-        linear-gradient(180deg,#044157,#02141f);
+        linear-gradient(180deg,#1bd3e6 0%,#0791ac 45%,#03556c 100%);
       box-shadow:0 14px 30px rgba(0,0,0,.9);
     }
 
@@ -157,7 +157,11 @@
       inset:0;
       border-radius:inherit;
       padding:2px;
-      background:linear-gradient(180deg, rgba(246,211,138,.95), rgba(246,211,138,.1));
+      /* contorno com leve mistura dourado + aqua */
+      background:linear-gradient(180deg,
+                  rgba(246,211,138,.95),
+                  rgba(185,247,255,.9) 40%,
+                  rgba(0,72,96,.0) 100%);
       -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
       -webkit-mask-composite:xor;
       mask-composite:exclude;
@@ -177,10 +181,10 @@
     }
 
     .pill-btn.secondary{
+      /* botão de ligar um pouco mais escuro */
       background:
-        linear-gradient(180deg, rgba(255,255,255,.08), transparent 52%) top/100% 56% no-repeat,
-        linear-gradient(180deg,#013243,#020910);
-      color:#ffeccb;
+        linear-gradient(180deg,#0da7bf 0%,#056777 55%,#023142 100%);
+      color:#e9f8ff;
     }
 
     .pill-btn i{font-size:1.02rem;}
@@ -356,7 +360,7 @@
           </div>
           <div class="hero-name">Cristian Custódio</div>
           <div class="hero-role">Fundador e CEO — Custódio Imóveis</div>
-          <div class="hero-tagline">LITORAL DE SANTA CATARINA</div>
+          <div class="hero-tagline">LITORAL • INVESTIMENTO • QUALIDADE</div>
         </header>
 
         <!-- BOTÕES PRINCIPAIS -->
@@ -365,7 +369,7 @@
             <i class="ri-id-card-line"></i>
             <span>Salvar contato</span>
           </a>
-          <a class="pill-btn secondary" href="tel:5548999289447">
+          <a class="pill-btn secondary" href="tel:048999289447">
             <i class="ri-phone-line"></i>
             <span>Ligar</span>
           </a>
@@ -378,8 +382,8 @@
           <a class="btn-line" href="https://wa.me/5548999289447" target="_blank" rel="noopener noreferrer">
             <span class="btn-icon"><i class="ri-whatsapp-line"></i></span>
             <span class="btn-label">
-              <span class="btn-main">WhatsApp</span>
-              <span class="btn-sub">+55 (48) 99928-9447</span>
+              <span class="btn-main">WhatsApp pessoal</span>
+              <span class="btn-sub">(48) 99928-9447</span>
             </span>
           </a>
 
@@ -394,8 +398,8 @@
           <div class="btn-line pix">
             <span class="btn-icon"><i class="ri-qr-code-line"></i></span>
             <span class="btn-label">
-              <span class="btn-main">Pix (telefone)</span>
-              <span class="btn-sub">Chave: 48 99928-9447</span>
+              <span class="btn-main">Pix</span>
+              <span class="btn-sub">Chave: 48999289447</span>
             </span>
           </div>
         </div>
@@ -407,15 +411,15 @@
           <a class="btn-line company" href="https://custodioimoveissc.com.br/" target="_blank" rel="noopener noreferrer">
             <span class="btn-icon"><i class="ri-global-line"></i></span>
             <span class="btn-label">
-              <span class="btn-main">Site oficial</span>
-              <span class="btn-sub">Explore o melhor do litoral de SC</span>
+              <span class="btn-main">Custódio Imóveis — Site</span>
+              <span class="btn-sub">Explore o melhor do litoral de Santa Catarina</span>
             </span>
           </a>
 
           <a class="btn-line company" href="https://www.instagram.com/custodioimoveisc" target="_blank" rel="noopener noreferrer">
             <span class="btn-icon"><i class="ri-instagram-line"></i></span>
             <span class="btn-label">
-              <span class="btn-main">Instagram da imobiliária</span>
+              <span class="btn-main">Custódio Imóveis — Instagram</span>
               <span class="btn-sub">@custodioimoveisc</span>
             </span>
           </a>
@@ -424,15 +428,15 @@
             <span class="btn-icon"><i class="ri-star-smile-line"></i></span>
             <span class="btn-label">
               <span class="btn-main">Avaliação no Google</span>
-              <span class="btn-sub">Deixe sua experiência com a Custódio</span>
+              <span class="btn-sub">Conte como foi sua experiência com a imobiliária</span>
             </span>
           </a>
 
-          <a class="btn-line company" href="tel:5548996674802">
-            <span class="btn-icon"><i class="ri-phone-line"></i></span>
+          <a class="btn-line company" href="https://wa.me/5548996674802" target="_blank" rel="noopener noreferrer">
+            <span class="btn-icon"><i class="ri-whatsapp-line"></i></span>
             <span class="btn-label">
-              <span class="btn-main">Telefone da imobiliária</span>
-              <span class="btn-sub">+55 (48) 99667-4802</span>
+              <span class="btn-main">WhatsApp da imobiliária</span>
+              <span class="btn-sub">Atendimento: (48) 99667-4802</span>
             </span>
           </a>
         </div>
@@ -440,9 +444,10 @@
         <div class="about-block">
           <div class="about-title">Sobre Cristian</div>
           <div class="about">
-            Fundador e CEO da Custódio Imóveis, especialista em imóveis no litoral de Santa Catarina.
-            Atua à frente do time comercial, combinando visão estratégica, relacionamento próximo com os
-            clientes e profundo conhecimento da região.
+            Cristian Custódio é fundador e CEO da Custódio Imóveis,
+            referência em imóveis no litoral de Santa Catarina. Atua
+            à frente do time comercial, unindo visão estratégica,
+            relacionamento próximo e profundo conhecimento da região.
           </div>
         </div>
 
